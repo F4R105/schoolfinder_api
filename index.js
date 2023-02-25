@@ -21,7 +21,7 @@ require('dotenv').config()
 
 // SAMPLE DATA
 const schools = [
-    {id: 1, name: "Mvumi mission"},
+    {id: 1, name: "Mvumi safari"},
     {id: 2, name: "DCT Secondary"},
     {id: 3, name: "Thaqaafa Sec"},
     {id: 4, name: "St Mary's"},
