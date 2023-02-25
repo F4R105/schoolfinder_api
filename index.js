@@ -1,8 +1,12 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
+require('dotenv').config()
+
 
 // DATABASE
 // const mongoose = require('mongoose')
+// const URL = process.env.SCHOOLS_DATABASE_URI
 // mongoose.connect(URL,()=>console.log('Database connected'))
 
 // const schoolsModel = mongoose.model('school',{
@@ -15,6 +19,7 @@ const app = express()
 //     status: String
 // })
 
+// SAMPLE DATA
 const schools = [
     {id: 1, name: "Mvumi mission"},
     {id: 2, name: "DCT Secondary"},
@@ -33,10 +38,11 @@ const schools = [
     {id: 15, name: "Vayolence uni"},
 ]
 
-// ROUTES
+// MIDDLEWARES
 express.json()
 express.urlencoded({extended: false})
 
+// ROUTES
 app.get('/', async (req, res) => {
     // const schools = await schoolsModel.find()
     // res.json(schools)
@@ -51,5 +57,6 @@ app.get('/', async (req, res) => {
 
 // })
 
+// SERVICE PORT LISTENING
 const PORT = 3000
 app.listen(PORT, ()=>console.log('API active on port '+ PORT))
