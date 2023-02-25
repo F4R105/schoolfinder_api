@@ -39,7 +39,7 @@ const schools = [
 ]
 
 const CORS_CONFIG = {
-    origin: ''
+    origin: 'https://google.com'
 }
 
 // MIDDLEWARES
