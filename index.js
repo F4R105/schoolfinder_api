@@ -38,9 +38,15 @@ const schools = [
     {id: 15, name: "Vayolence uni"},
 ]
 
+const CORS_CONFIG = {
+    origin: ''
+}
+
 // MIDDLEWARES
+app.use(cors(CORS_CONFIG))
 express.json()
 express.urlencoded({extended: false})
+
 
 // ROUTES
 app.get('/', async (req, res) => {
