@@ -1,0 +1,10 @@
+main#request_reset_code {
+    display: flex;
+    flex-direction: column;
+
+    .container {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+}

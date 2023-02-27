@@ -1,0 +1,65 @@
+nav {
+    .user_login {
+        background-color: var(--accent-color);
+        padding: 3px 0;
+
+        .container {
+            justify-content: space-between;
+        }
+
+        #user_email { color: white;}
+
+        a {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            border: 1px solid white;
+            color: white;
+            padding: 5px 10px;
+
+            &:hover {
+                background-color: var(--contrast-color);
+            }
+        }
+    }
+}
+
+main#user_account {
+
+    .container {
+        display: block;
+        color: white;
+        padding-top: 80px;
+
+        header {
+            margin-bottom: 3em;
+        }
+
+        section > div {
+            margin-bottom: 2em;
+        }
+
+        .heading {
+            font-size: 1.3rem;
+            margin-bottom: 0.3em;
+            color: grey;
+            opacity: .5;
+        }
+
+        code {
+            display: block;
+            width: fit-content;
+            // max-width: 400px;
+            background-color: var(--contrast-color);
+            padding: 2em 5em;
+            border-radius: 5px;
+            margin-bottom: 1em;
+        }
+
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    }
+    
+}

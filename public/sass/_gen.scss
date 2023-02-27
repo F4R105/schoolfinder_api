@@ -1,0 +1,143 @@
+:root {
+    --primary-color: #543badff;
+    --secondary-color: #171e31ff;
+    --contrast-color: #1d263dff;
+    --bg-color: #050811ff;
+    --accent-color: #ff7f2aff;
+    --white-color: white;
+    --red-alert: #ff2a2aff;
+    --green-alert: #5aa02cff;
+    --nav-height: 50px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@import 'utility_classes';
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    // overflow: hidden;
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-underline-offset: 3px;
+        text-decoration: none;
+        list-style: none;
+        // outline: 2px solid red;
+    }
+
+    a {
+        color: var(--accent-color);
+        text-decoration: none;
+    }
+
+    img {width: 100%;}
+
+    .container {
+        width: 100%;
+        max-width: 1060px;
+        height: 100%;
+        margin: 0 auto;
+        padding:  0 1em;
+        // outline: 2px solid red;
+    }
+
+    main {
+        padding-top: var(--nav-height);
+        padding-bottom: 2em;
+        min-height: 100vh;
+    }
+
+    nav {
+        background-color: var(--primary-color);
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+        height: var(--nav-height);
+
+        .container {
+            display: flex;
+            align-items: center;
+        }
+
+        #logo {
+            display: flex;
+    
+            h1:first-child{
+                color: var(--white-color)
+            }
+    
+            h1:nth-child(2){
+                color: var(--accent-color)
+            }
+    
+            h1:last-child{
+                margin-left: 10px;
+                color: var(--white-color);
+            }
+        }
+    }
+}
+
+form {
+    width: 400px;
+    padding-top: 2em;
+    --element-padding: 0.3em;
+    --font-size: 1.3rem;
+    // outline: 2px solid red;
+
+    & > div {
+        margin-bottom: 1em;
+    }
+
+    label { 
+        display: block; 
+        margin-bottom: 3px;
+        color: var(--white-color);
+    }
+
+    input {
+        background-color: transparent;
+        border: none;
+        border-radius: 2px;
+        background-color: var(--white-color);
+        color: var(--main-color);
+        font-size: var(--font-size);
+        padding: var(--element-padding);
+        width: 100%;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        border: none;
+        color: var(--white-color);
+        border-radius: 2px;
+        border-collapse: collapse;
+        cursor: pointer;
+        text-transform: uppercase;
+        width: 100%;
+        // padding: var(--element-padding);
+        padding: 0.5em 0;
+        font-size: var(--font-size);
+        background-color: var(--primary-color);
+    }
+
+    button#google_login_btn {
+        background-color: transparent;
+        border: 1px solid var(--primary-color);
+    }
+
+    span { color: white}
+
+}

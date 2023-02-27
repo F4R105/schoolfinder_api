@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchoolFinder API | Create account</title>
+    <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/">
+                <div id="logo">
+                    <h1>School</h1>
+                    <h1>Finder</h1>
+                    <h1>API</h1>
+                </div>
+            </a>
+        </div>
+    </nav>
+    <main id="register">
+        <div class="container">
+            <form action="/login" method="POST">
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter email">
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div>
+                    <label for="cpassword">Confirm Password</label>
+                    <input type="password" name="cpassword" id="cpassword">
+                </div>
+                <div>
+                    <button type="submit">Create Account</button>
+                </div>
+                <div>
+                    <p class="alert error">Wrong email or password</p>
+                </div>
+                <div>
+                    <span>Already have an account? <a href="./login">Login here</a></span>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

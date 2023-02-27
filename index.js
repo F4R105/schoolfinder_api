@@ -3,6 +3,8 @@ const app = express()
 const cors = require('cors')
 require('dotenv').config()
 
+// SAMPLE DATA
+const schools = require('./sample_schools') 
 
 // DATABASE
 // const mongoose = require('mongoose')
@@ -19,37 +21,23 @@ require('dotenv').config()
 //     status: String
 // })
 
-// SAMPLE DATA
-const schools = [
-    {id: 1, name: "Mvumi safari"},
-    {id: 2, name: "DCT Secondary"},
-    {id: 3, name: "Thaqaafa Sec"},
-    {id: 4, name: "St Mary's"},
-    {id: 5, name: "St Gaspar"},
-    {id: 6, name: "Machame Health"},
-    {id: 7, name: "KCMC Health"},
-    {id: 8, name: "Arusha Technical"},
-    {id: 9, name: "Ilkiurei primary"},
-    {id: 10, name: "Dodoma sec"},
-    {id: 11, name: "Msange secondary"},
-    {id: 12, name: "Arusha tech"},
-    {id: 13, name: "Muheza health"},
-    {id: 14, name: "Mvumi health"},
-    {id: 15, name: "Vayolence uni"},
-]
-
 const CORS_CONFIG = {
     origin: '*'
 }
 
 // MIDDLEWARES
+app.set('view engine', 'ejs')
 app.use(cors(CORS_CONFIG))
-express.json()
-express.urlencoded({extended: false})
+app.use(express.json())
+app.use(express.static('public'))
+app.use(express.urlencoded({extended: false}))
 
 
 // ROUTES
-app.get('/', async (req, res) => {
+const userRoutes = require('./routes/user_routes')
+app.use('/', userRoutes)
+
+app.get('/schools', async (req, res) => {
     // const schools = await schoolsModel.find()
     // res.json(schools)
     res.json(schools)
@@ -64,5 +52,5 @@ app.get('/', async (req, res) => {
 // })
 
 // SERVICE PORT LISTENING
-const PORT = 3000
+const PORT = 4000
 app.listen(PORT, ()=>console.log('API active on port '+ PORT))
