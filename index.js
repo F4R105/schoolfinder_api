@@ -22,13 +22,12 @@ app.use(express.urlencoded({extended: false}))
 // const schools = require('./sample_schools') 
 
 // ROUTES
-const userRoutes = require('./routes/user_routes')
+// const userRoutes = require('./routes/user_routes')
 const adminRoutes = require('./routes/admin_routes')
 const apiRoutes = require('./routes/api_routes')
 
-app.use('/', userRoutes)
-app.use('/admin', adminRoutes)
+// app.use('/', userRoutes)
 app.use('/', apiRoutes)
-
+app.use('/admin', adminRoutes)
 
 app.listen(process.env.SERVER_PORT, ()=>console.log('API active on port '+ process.env.SERVER_PORT))
