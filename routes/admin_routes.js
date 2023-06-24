@@ -11,7 +11,7 @@ router.post('/add', async (req, res) => {
         const addedSchool = await newSchool.save()
         res.json(addedSchool)
     }catch(err){
-        console.log(err)
+        console.log(err.message)
         res.json({error: err})
     }
 
@@ -45,7 +45,7 @@ router.post('/update', async(req, res) => {
         // }
 
     }catch(err){
-        console.log(err)
+        console.log(err.message)
         res.json({error: err})
     }
 })
