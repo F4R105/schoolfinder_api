@@ -55,17 +55,25 @@ router.post('/filter', async (req, res) => {
         "category.school_fee": request.fee,
     }
 
-    const pri = await PrimarySchool.find(filterObject).limit(20)
-    const sec = await SecondarySchool.find(filterObject).limit(20)
-    const adv = await AdvancedSchool.find(filterObject).limit(20)
-    res.json([...pri,...sec,...adv])
+    try{
+        const pri = await PrimarySchool.find(filterObject).limit(20)
+        const sec = await SecondarySchool.find(filterObject).limit(20)
+        const adv = await AdvancedSchool.find(filterObject).limit(20)
+        res.json([...pri,...sec,...adv])
+    }catch(err){
+        console.log(err.message)
+    }
 })
 
 router.post('/search', async (req, res) => {
-    const pri = await PrimarySchool.find({$text: {$search: req.body.query}}).limit(20)
-    const sec = await SecondarySchool.find({$text: {$search: req.body.query}}).limit(20)
-    const adv = await AdvancedSchool.find({$text: {$search: req.body.query}}).limit(20)
-    res.json([...pri,...sec,...adv])
+    try{
+        const pri = await PrimarySchool.find({$text: {$search: req.body.query}}).limit(20)
+        const sec = await SecondarySchool.find({$text: {$search: req.body.query}}).limit(20)
+        const adv = await AdvancedSchool.find({$text: {$search: req.body.query}}).limit(20)
+        res.json([...pri,...sec,...adv])
+    }catch(err){
+        console.log(err.message)
+    }
 })
 
 module.exports = router
