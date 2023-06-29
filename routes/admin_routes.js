@@ -29,20 +29,20 @@ router.post('/update', async(req, res) => {
     try {
         const schoolLevel = req.body.category.level
 
-        // if(schoolLevel == "primary"){
-        //     const newSchool = await PrimarySchool.updateOne({_id: "6458081c50aeca039e310ddb"}, req.body)
-        //     res.json(newSchool)
-        // }
+        if(schoolLevel == "primary"){
+            const newSchool = await PrimarySchool.updateOne({_id: "6458081c50aeca039e310ddb"}, req.body)
+            res.json(newSchool)
+        }
 
-        // if(schoolLevel == "secondary"){
-        //     const newSchool = await SecondarySchool.updateOne({_id: "6458081c50aeca039e310ddb"}, req.body)
-        //     res.json(newSchool)
-        // }
+        if(schoolLevel == "secondary"){
+            const newSchool = await SecondarySchool.updateOne({_id: "6458081c50aeca039e310ddb"}, req.body)
+            res.json(newSchool)
+        }
 
-        // if(schoolLevel == "advanced"){
-        //     const newSchool = await AdvancedSchool.updateOne({_id: "6458081c50aeca039e310ddb"}, req.body)
-        //     res.json(newSchool)
-        // }
+        if(schoolLevel == "advanced"){
+            const newSchool = await AdvancedSchool.updateOne({_id: "6458081c50aeca039e310ddb"}, req.body)
+            res.json(newSchool)
+        }
 
     }catch(err){
         console.log(err.message)
